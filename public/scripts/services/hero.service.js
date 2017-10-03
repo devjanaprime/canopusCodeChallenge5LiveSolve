@@ -20,6 +20,7 @@ myApp.service('HeroService', function ($http) {
   self.getHeroFromDB = function () {
     $http.get('/hero').then(function (response) {
       self.heroObject.data = response.data;
+      console.log( 'in get:', self.heroObject.data );
     });
   }
 });

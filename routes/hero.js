@@ -5,6 +5,16 @@ var Hero = require('../models/heroModel');
 // get all heros
 router.get('/', function(req, res) {
   // TODO: add code to return all heros from the db
+  Hero.find({}, function( err, response ){
+    if( err ){
+      console.log( 'error reading gyros from db:', err );
+      res.sendStatus( 500 );
+    }// end error
+    else{
+      console.log( '/hero get route hit' );
+      res.send( response );
+    } // end !err
+  }); // end find
 });
 
 // post to create a new hero

@@ -24,8 +24,9 @@
       <input ng-model="hc.power" type="text" name="power" value="">
       <button ng-click="hc.addHero()" type="button" name="button">Add Hero</button>
     </form>
-    <div class="box" ng-repeat="hero in hc.heroObject.data">
-      {{hero.alias}} {{hero.city}} {{hero.power}}
+    <!-- using an ng filter to order newest first, via Kitty's Google superpowers -->
+    <div class="box" ng-repeat="hero in hc.heroObject.data | orderBy : '-'">
+      <strong>{{hero.alias}}</strong><hr>{{hero.city}} {{hero.power}}
     </div>
   </div>
 </body>
