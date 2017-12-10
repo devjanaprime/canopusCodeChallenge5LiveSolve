@@ -1,2 +1,2 @@
 // DO NOT MODIFY
-var myApp = angular.module('myApp', []);
+let myApp = angular.module('myApp', []);

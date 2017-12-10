@@ -1,11 +1,11 @@
-var express = require('express');
-var router = express.Router();
-var Hero = require('../models/heroModel');
+let express = require('express');
+let router = express.Router();
+let Hero = require('../models/heroModel');
 
 // get all heros
 router.get('/', function(req, res) {
   // TODO: add code to return all heros from the db
-  Hero.find({}, function( err, response ){
+  Hero.find({}, ( err, response ) => {
     if( err ){
       console.log( 'error reading gyros from db:', err );
       res.sendStatus( 500 );
@@ -19,12 +19,12 @@ router.get('/', function(req, res) {
 
 // post to create a new hero
 // DO NOT MODIFY
-router.post('/', function(req, res) {
+router.post('/', (req, res) => {
   console.log('inside hero post', req.body);
 
   var newHero = new Hero(req.body);
 
-  newHero.save(function(err) {
+  newHero.save( (err) => {
     console.log('here');
     if(err){
       console.log(err);

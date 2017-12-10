@@ -1,5 +1,5 @@
 myApp.controller('HeroController', function (HeroService) {
-  var vm = this;
+  let vm = this;
 
   // TODO: Bind the something on the view model to the hero data in ther service
   // HINT: check out the ng-repeat in index.html: ng-repeat="hero in hc.heroObject.data
@@ -7,7 +7,7 @@ myApp.controller('HeroController', function (HeroService) {
 
   // TODO: Add code here to get heros on controller load
   // function to add hero
-  vm.addHero = function () {
+  vm.addHero = () => {
     var objectToSend = {
       alias: vm.alias,
       city: vm.city,
@@ -19,5 +19,5 @@ myApp.controller('HeroController', function (HeroService) {
     HeroService.addHeroToDB( objectToSend );
   }
 
-  HeroService.getHeroFromDB()
+  HeroService.getHeroFromDB();
 });
